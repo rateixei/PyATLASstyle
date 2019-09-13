@@ -9,17 +9,21 @@ def applyATLASstyle(mtp):
     font_list = font_manager.createFontList(font_files)
     font_manager.fontManager.ttflist.extend(font_list)
     mtp.rcParams['font.family'] = 'Arial'
-    mtp.rcParams['font.size'] = 12.5
+    mtp.rcParams['font.size'] = 14
     mtp.rcParams['legend.frameon'] = False
-    mtp.rcParams['legend.fontsize'] = 10.0
+    mtp.rcParams['legend.fontsize'] = 13.0
     mtp.rcParams['lines.antialiased'] = False
     mtp.rcParams['lines.linewidth'] = 2.5
     mtp.rcParams['xtick.direction'] = 'in'
     mtp.rcParams['xtick.top'] = True
     mtp.rcParams['xtick.minor.visible'] = True
+    mtp.rcParams['xtick.major.size'] = 10
+    mtp.rcParams['xtick.minor.size'] = 5
     mtp.rcParams['ytick.direction'] = 'in'
     mtp.rcParams['ytick.right'] = True
     mtp.rcParams['ytick.minor.visible'] = True
+    mtp.rcParams['ytick.major.size'] = 10
+    mtp.rcParams['ytick.minor.size'] = 5
     mtp.rcParams['mathtext.fontset'] = 'custom'
     mtp.rcParams['mathtext.it'] = 'Arial:italic'
     mtp.rcParams['mathtext.bf'] = 'Arial:bold'
@@ -27,10 +31,11 @@ def applyATLASstyle(mtp):
     mtp.rcParams['mathtext.sf'] = 'Arial'
     mtp.rcParams['mathtext.cal'] = 'Arial:italic'
     mtp.rcParams['mathtext.tt'] = 'Arial'
+    # mtp.rcParams["axes.axisbelow"] = False
 
 def makeATLAStag(ax, fig, first_tag='', second_tag=''):
-    xmin = 0.03
-    ymax = 0.97
+    xmin = 0.04
+    ymax = 0.95
     line_spacing = 0.2
     box0 = ax.text(xmin, ymax, "ATLAS", fontweight='bold', fontstyle='italic', verticalalignment='top', transform=ax.transAxes)
     box0_ext_tr = ax.transAxes.inverted().transform(box0.get_window_extent(renderer=fig.canvas.get_renderer()))
