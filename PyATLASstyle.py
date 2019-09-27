@@ -9,9 +9,9 @@ def applyATLASstyle(mtp):
     font_list = font_manager.createFontList(font_files)
     font_manager.fontManager.ttflist.extend(font_list)
     mtp.rcParams['font.family'] = 'Arial'
-    mtp.rcParams['font.size'] = 14
+    mtp.rcParams['font.size'] = 15
     mtp.rcParams['legend.frameon'] = False
-    mtp.rcParams['legend.fontsize'] = 13.0
+    mtp.rcParams['legend.fontsize'] = 14
     mtp.rcParams['lines.antialiased'] = False
     mtp.rcParams['lines.linewidth'] = 2.5
     mtp.rcParams['xtick.direction'] = 'in'
