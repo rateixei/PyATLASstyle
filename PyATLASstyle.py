@@ -1,5 +1,8 @@
 import os
 
+def get_good_colors():
+    return ['#AA3377', '#228833', '#4477AA', '#CCBB44', '#EE6677', '#BBBBBB']
+
 def applyATLASstyle(mtp):
     font_dir = os.path.abspath(__file__).replace("PyATLASstyle.py", "fonts/")
     font_dirs = [font_dir,]
