@@ -38,11 +38,11 @@ def applyATLASstyle(mtp):
 
 def makeATLAStag(ax, fig, first_tag='', second_tag=''):
     xmin = 0.04
-    ymax = 0.95
-    line_spacing = 0.2
-    box0 = ax.text(xmin, ymax, "ATLAS", fontweight='bold', fontstyle='italic', verticalalignment='top', transform=ax.transAxes)
+    ymax = 0.85
+    line_spacing = 0.6
+    box0 = ax.text(xmin, ymax, "ATLAS", fontweight='bold', fontstyle='italic', verticalalignment='bottom', transform=ax.transAxes)
     box0_ext_tr = ax.transAxes.inverted().transform(box0.get_window_extent(renderer=fig.canvas.get_renderer()))
-    box1 = ax.text(box0_ext_tr[1][0], ymax, " ", verticalalignment='top', transform=ax.transAxes)
+    box1 = ax.text(box0_ext_tr[1][0], ymax, " ", verticalalignment='bottom', transform=ax.transAxes)
     box1_ext_tr = ax.transAxes.inverted().transform(box1.get_window_extent(renderer=fig.canvas.get_renderer()))
-    ax.text(box1_ext_tr[1][0], ymax, first_tag, verticalalignment='top', transform=ax.transAxes)
-    ax.text(xmin, box0_ext_tr[0][1]-(box0_ext_tr[1][1]-box0_ext_tr[0][1])*line_spacing, second_tag, verticalalignment='top', transform=ax.transAxes)
+    ax.text(box1_ext_tr[1][0], ymax, first_tag, verticalalignment='bottom', transform=ax.transAxes)
+    ax.text(xmin, ymax-(box0_ext_tr[1][1]-box0_ext_tr[0][1])*(line_spacing+len(second_tag.split("\n"))), second_tag, verticalalignment='bottom', transform=ax.transAxes)
