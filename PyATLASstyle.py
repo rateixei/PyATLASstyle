@@ -34,11 +34,10 @@ def applyATLASstyle(mtp):
     mtp.rcParams['mathtext.sf'] = 'Arial'
     mtp.rcParams['mathtext.cal'] = 'Arial:italic'
     mtp.rcParams['mathtext.tt'] = 'Arial'
+    mtp.rcParams['axes.unicode_minus'] = False
     # mtp.rcParams["axes.axisbelow"] = False
 
-def makeATLAStag(ax, fig, first_tag='', second_tag=''):
-    xmin = 0.04
-    ymax = 0.85
+def makeATLAStag(ax, fig, first_tag='', second_tag='', xmin=0.04, ymax=0.85):
     line_spacing = 0.6
     box0 = ax.text(xmin, ymax, "ATLAS", fontweight='bold', fontstyle='italic', verticalalignment='bottom', transform=ax.transAxes)
     box0_ext_tr = ax.transAxes.inverted().transform(box0.get_window_extent(renderer=fig.canvas.get_renderer()))
