@@ -11,7 +11,8 @@ def applyATLASstyle(mtp):
     font_files = font_manager.findSystemFonts(fontpaths=font_dirs)
     font_list = font_manager.createFontList(font_files)
     font_manager.fontManager.ttflist.extend(font_list)
-    mtp.rcParams['font.family'] = 'Arial'
+    #mtp.rcParams['font.family'] = 'Arial'
+    mtp.rcParams['font.family'] = 'TeX Gyre Heros'
     mtp.rcParams['font.size'] = 15
     mtp.rcParams['legend.frameon'] = False
     mtp.rcParams['legend.fontsize'] = 14
@@ -28,13 +29,20 @@ def applyATLASstyle(mtp):
     mtp.rcParams['ytick.major.size'] = 10
     mtp.rcParams['ytick.minor.size'] = 5
     mtp.rcParams['mathtext.fontset'] = 'custom'
-    mtp.rcParams['mathtext.it'] = 'Arial:italic'
-    mtp.rcParams['mathtext.bf'] = 'Arial:bold'
-    mtp.rcParams['mathtext.rm'] = 'Arial'
-    mtp.rcParams['mathtext.sf'] = 'Arial'
-    mtp.rcParams['mathtext.cal'] = 'Arial:italic'
-    mtp.rcParams['mathtext.tt'] = 'Arial'
+    #mtp.rcParams['mathtext.it'] = 'Arial:italic'
+    #mtp.rcParams['mathtext.bf'] = 'Arial:bold'
+    #mtp.rcParams['mathtext.rm'] = 'Arial'
+    #mtp.rcParams['mathtext.sf'] = 'Arial'
+    #mtp.rcParams['mathtext.cal'] = 'Arial:italic'
+    #mtp.rcParams['mathtext.tt'] = 'Arial'
+    mtp.rcParams['mathtext.it'] = 'TeX Gyre Heros:italic'
+    mtp.rcParams['mathtext.bf'] = 'TeX Gyre Heros:bold'
+    mtp.rcParams['mathtext.rm'] = 'TeX Gyre Heros'
+    mtp.rcParams['mathtext.sf'] = 'TeX Gyre Heros'
+    mtp.rcParams['mathtext.cal'] = 'TeX Gyre Heros:italic'
+    mtp.rcParams['mathtext.tt'] = 'TeX Gyre Heros'
     mtp.rcParams['axes.unicode_minus'] = False
+    mtp.rcParams['pdf.fonttype'] = 42
     # mtp.rcParams["axes.axisbelow"] = False
 
 def makeATLAStag(ax, fig, first_tag='', second_tag='', xmin=0.04, ymax=0.85):
