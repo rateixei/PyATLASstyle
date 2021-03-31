@@ -3,6 +3,9 @@ import os
 def get_good_colors():
     return ['#AA3377', '#228833', '#4477AA', '#CCBB44', '#EE6677', '#BBBBBB']
 
+def make_legend(ax, xmin=0.96, ymax=0.96):
+    ax.legend(frameon=False, bbox_to_anchor=(xmin, ymax) )
+
 def applyATLASstyle(mtp):
     font_dir = os.path.abspath(__file__).replace("PyATLASstyle.py", "fonts/")
     font_dirs = [font_dir,]
@@ -17,7 +20,7 @@ def applyATLASstyle(mtp):
     mtp.rcParams['legend.frameon'] = False
     mtp.rcParams['legend.fontsize'] = 14
     mtp.rcParams['lines.antialiased'] = False
-    mtp.rcParams['lines.linewidth'] = 2.5
+#     mtp.rcParams['lines.linewidth'] = 2.
     mtp.rcParams['xtick.direction'] = 'in'
     mtp.rcParams['xtick.top'] = True
     mtp.rcParams['xtick.minor.visible'] = True
@@ -45,7 +48,7 @@ def applyATLASstyle(mtp):
     mtp.rcParams['pdf.fonttype'] = 42
     # mtp.rcParams["axes.axisbelow"] = False
 
-def makeATLAStag(ax, fig, first_tag='', second_tag='', xmin=0.04, ymax=0.85, line_spacing=0.6):
+def makeATLAStag(ax, fig, first_tag='', second_tag='', xmin=0.04, ymax=0.87, line_spacing=0.6):
     box0 = ax.text(xmin, ymax, "ATLAS", fontweight='bold', fontstyle='italic', verticalalignment='bottom', transform=ax.transAxes)
     box0_ext_tr = ax.transAxes.inverted().transform(box0.get_window_extent(renderer=fig.canvas.get_renderer()))
     box1 = ax.text(box0_ext_tr[1][0], ymax, " ", verticalalignment='bottom', transform=ax.transAxes)
